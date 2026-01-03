@@ -1,335 +1,472 @@
-# 💧 Smart Water Hardness & Treatment Analyzer
+# Smart Water Hardness and Treatment Analyzer
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=flat-square)
-![Last Updated](https://img.shields.io/badge/Last%20Updated-January%202026-orange?style=flat-square)
+![Project Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![License](https://img.shields.io/badge/License-MIT-blue)
+![Built with Vite](https://img.shields.io/badge/Built%20with-Vite%2BTypeScript-646CFF)
+![React Version](https://img.shields.io/badge/React-18+-61DAFB)
+![Deployment](https://img.shields.io/badge/Deployed%20on-Vercel-000000)
 
-*An intelligent water quality analysis system that determines water hardness levels and recommends optimal treatment methods*
+**A comprehensive web application for analyzing water hardness, calculating treatment methods, and understanding water quality parameters.**
 
-[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [Documentation](#-documentation) • [Contributing](#-contributing)
+• [📧 Contact](#contact) • [📄 License](#license)
 
 </div>
 
 ---
 
+## 📋 Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Development](#development)
+  - [Build](#build)
+- [Usage Guide](#usage-guide)
+- [Key Features Explained](#key-features-explained)
+- [Chemistry Behind](#chemistry-behind)
+- [Project Architecture](#project-architecture)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
+---
+
 ## 🎯 Overview
 
-The **Smart Water Hardness & Treatment Analyzer** is a comprehensive analytical tool designed to assess water hardness parameters and provide data-driven treatment recommendations. This project combines scientific water chemistry principles with intelligent analysis algorithms to deliver accurate hardness assessment and customized treatment solutions for water quality management.
+**Smart Water Hardness and Treatment Analyzer** is an interactive web-based tool designed to help users understand and manage water hardness. Whether you're dealing with hard water in your home, industrial applications, or environmental studies, this application provides comprehensive analysis, calculation tools, and treatment recommendations.
 
-### Why This Project?
-
-Water hardness is a critical water quality issue affecting millions worldwide. Most existing solutions require expensive laboratory equipment or complex manual calculations. This project democratizes water hardness analysis by providing an intelligent, accessible, and automated solution that anyone can use to assess water quality and make informed treatment decisions.
+The application combines water chemistry calculations with an intuitive user interface, making complex water quality analysis accessible to both professionals and enthusiasts.
 
 ---
 
 ## ✨ Features
 
-### 🔬 Core Analysis Features
-- **Multi-Parameter Water Hardness Detection** - Analyzes calcium and magnesium ion concentrations
-- **Intelligent Hardness Classification** - Categorizes water into soft, moderately hard, hard, and very hard levels
-- **Real-time Measurement Analysis** - Process water quality data instantly with high accuracy
-- **Smart Treatment Recommendation Engine** - Provides customized treatment method suggestions
-- **Comprehensive Data Processing** - Handles multiple samples and formats efficiently
+### 🔬 Core Analysis Tools
 
-### 🧪 Supported Analysis Methods
-- EDTA Complexometric Titration (laboratory-grade accuracy)
-- Conductivity-based Hardness Estimation (field measurements)
-- pH & Temperature Compensation for environmental factors
+- **Water Hardness Analyzer** - Calculate total, temporary, and permanent hardness based on water sample analysis
+  - Support for multiple calculation methods
+  - Real-time hardness level classification
+  - Visual hardness scale indicators
+  
+- **EDTA Titration Simulator** - Interactive simulation of EDTA complexometric titration
+  - Step-by-step titration process visualization
+  - Color change indicators for endpoint detection
+  - Educational breakdown of the titration procedure
 
-### 💡 Treatment Options
-- Ion Exchange (Zeolite & Resin methods)
-- Reverse Osmosis (RO) Systems
-- Chemical Precipitation (Lime-Soda Process)
-- Boiling Method (temporary hardness removal)
-- Washing Soda Treatment
+- **Water Treatment Recommender** - Get personalized treatment suggestions
+  - Based on your specific hardness levels
+  - Multiple treatment method options (Ion Exchange, RO, Lime-Soda, etc.)
+  - Cost-benefit analysis for different approaches
+  - Installation and maintenance guidance
 
-### 📊 Data Management
-- Store and retrieve measurement history
-- Export results in JSON and CSV formats
-- Batch processing for multiple samples
-- Comprehensive data visualization capabilities
+- **Boiler Troubles Explainer** - Understand scale formation and corrosion issues
+  - Identify common boiler problems
+  - Prevention strategies
+  - Maintenance recommendations
+  - Visual diagrams of scale layers and corrosion patterns
 
----
+- **Process Visualizations** - Animated visualizations of treatment processes
+  - Ion exchange process animation
+  - Reverse osmosis membrane filtration
+  - Lime-soda softening process
+  - Chemical precipitation steps
 
-## 🚀 Installation
+### 🎨 User Experience Features
 
-### Prerequisites
-- Python 3.8 or higher
-- pip package manager
-
-### Setup
-
-```bash
-# Clone the repository
-git clone https://github.com/PaulBrytonRaj18/Smart-Water-Hardness-and-Treatment-Analyzer.git
-cd Smart-Water-Hardness-and-Treatment-Analyzer
-
-# Create virtual environment
-python -m venv venv
-
-# Activate virtual environment
-# Windows
-venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
+- **Responsive Design** - Seamless experience across desktop, tablet, and mobile devices
+- **Interactive Navigation** - Sidebar and breadcrumb navigation
+- **Data Visualization** - Charts and graphs for better understanding
+- **Accessibility** - WCAG compliant with proper semantic HTML
 
 ---
 
-## 💻 Usage
+## 🛠️ Technology Stack
 
-### Quick Start
+### Frontend Framework
+- **Vite** - Next generation frontend build tool for lightning-fast development
+- **React 18** - UI library for building interactive components
+- **TypeScript** - Type-safe JavaScript for better code quality
 
-```bash
-# Run the analyzer
-python main.py
+### Styling & UI
+- **Tailwind CSS** - Utility-first CSS framework
+- **Shadcn/UI** - High-quality reusable components built on Radix UI
+- **CSS Modules** - Scoped styling for components
 
-# Analyze a specific water sample
-python main.py --sample water_data.json
+### Development Tools
+- **NPM** - Dependency management
+- **PostCSS** - CSS transformations
+- **ESLint** - Code quality and consistency
+- **Prettier** - Code formatting
 
-# Generate detailed analysis report
-python main.py --analyze --output report.csv
-```
-
-### Python API Example
-
-```python
-from analyzer import WaterHardnessAnalyzer
-
-# Initialize analyzer
-analyzer = WaterHardnessAnalyzer()
-
-# Define water sample parameters
-sample = {
-    'calcium_mg_L': 75,        # mg/L
-    'magnesium_mg_L': 25,      # mg/L
-    'temperature': 25,          # °C
-    'pH': 7.2,
-    'conductivity': 450         # µS/cm
-}
-
-# Analyze sample
-result = analyzer.analyze(sample)
-
-print(f"Hardness Level: {result['hardness_ppm']} PPM")
-print(f"Classification: {result['classification']}")
-print(f"Recommended Treatment: {result['recommended_treatment']}")
-```
-
-### Hardness Classification Scale
-
-| Classification | PPM CaCO₃ | Treatment Status |
-|---|---|---|
-| Soft | 0-60 | ✅ No treatment needed |
-| Moderately Hard | 61-120 | ⚠️ Optional treatment |
-| Hard | 121-180 | 🔴 Recommended treatment |
-| Very Hard | 180+ | 🔴 Essential treatment |
+### Deployment
+- **Vercel** - Fast, serverless deployment platform
 
 ---
 
 ## 📁 Project Structure
 
 ```
-Smart-Water-Hardness-and-Treatment-Analyzer/
-├── main.py                      # Entry point
-├── requirements.txt             # Dependencies
-├── config.json                  # Configuration settings
-│
-├── analyzer/
-│   ├── __init__.py
-│   ├── hardness_calculator.py   # Core calculation engine
-│   ├── treatment_engine.py      # Treatment recommendations
-│   └── data_processor.py        # Data handling
-│
-├── models/
-│   ├── water_sample.py          # Data models
-│   └── treatment_method.py      # Treatment algorithms
-│
-├── utils/
-│   ├── validators.py            # Input validation
-│   ├── converters.py            # Unit conversions
-│   └── visualization.py         # Data visualization
-│
-├── tests/
-│   ├── test_calculator.py
-│   ├── test_treatment.py
-│   └── test_integration.py
-│
-└── data/
-    ├── sample_data.json         # Example water samples
-    └── treatment_database.json   # Treatment database
+smart-water-hardness-and-treatment-analyzer/
+├── src/
+│   ├── components/
+│   │   ├── AppHeader.tsx              # Main application header
+│   │   ├── AppLayout.tsx              # Root layout wrapper
+│   │   ├── AppSidebar.tsx             # Navigation sidebar
+│   │   ├── BoilerTroublesExplainer.tsx # Boiler issues component
+│   │   ├── EDTASimulator.tsx           # EDTA titration simulator
+│   │   ├── HardnessAnalyzer.tsx       # Water hardness calculator
+│   │   ├── ProcessVisualizations.tsx   # Treatment process animations
+│   │   ├── TreatmentRecommender.tsx   # Treatment suggestion engine
+│   │   ├── NavLink.tsx                # Navigation link component
+│   │   └── ui/                         # Shadcn UI components library
+│   │       ├── accordion.tsx
+│   │       ├── button.tsx
+│   │       ├── card.tsx
+│   │       ├── chart.tsx
+│   │       ├── dialog.tsx
+│   │       ├── form.tsx
+│   │       ├── input.tsx
+│   │       ├── select.tsx
+│   │       ├── tabs.tsx
+│   │       ├── textarea.tsx
+│   │       └── [30+ additional UI components]
+│   ├── lib/
+│   │   ├── boilerTroubles.ts           # Boiler trouble data & logic
+│   │   ├── treatmentData.ts            # Treatment methods database
+│   │   ├── waterCalculations.ts        # Core water chemistry calculations
+│   │   └── utils.ts                    # Utility functions
+│   ├── pages/
+│   │   ├── AnalyzerPage.tsx            # Water hardness analysis page
+│   │   ├── BoilerTroublesPage.tsx      # Boiler issues page
+│   │   ├── EDTAPage.tsx                # EDTA simulator page
+│   │   ├── OverviewPage.tsx            # Dashboard/home page
+│   │   ├── ProcessesPage.tsx           # Treatment processes page
+│   │   ├── TreatmentsPage.tsx          # Treatment recommendations page
+│   │   └── NotFound.tsx                # 404 error page
+│   ├── hooks/
+│   │   ├── use-mobile.tsx              # Mobile detection hook
+│   │   └── use-toast.ts                # Toast notification hook
+│   ├── App.tsx                         # Main app component
+│   ├── main.tsx                        # Application entry point
+│   ├── index.css                       # Global styles
+│   └── vite-env.d.ts                   # Vite type definitions
+├── public/
+│   ├── placeholder.svg                 # SVG assets
+│   └── robots.txt                      # SEO robots file
+├── package.json                        # Dependencies & scripts
+├── package-lock.json                   # Locked dependency versions
+├── vite.config.ts                      # Vite configuration
+├── tsconfig.json                       # TypeScript root config
+├── tsconfig.app.json                   # TypeScript app config
+├── tsconfig.node.json                  # TypeScript node config
+├── tailwind.config.ts                  # Tailwind CSS config
+├── postcss.config.js                   # PostCSS configuration
+├── README.md                           # This file
+└── .gitignore                          # Git ignore rules
 ```
 
 ---
 
-## 🧪 Testing
+## 🚀 Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have the following installed:
+- **Node.js** (v16.0.0 or higher) - [Download](https://nodejs.org/)
+- **npm** (v7.0.0 or higher) - Comes with Node.js
+- **Git** - For version control
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/smart-water-hardness-and-treatment-analyzer.git
+   cd smart-water-hardness-and-treatment-analyzer
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Verify installation**
+   ```bash
+   npm run dev
+   ```
+
+### Development
+
+Start the development server with hot module replacement (HMR):
 
 ```bash
-# Run all tests
-pytest tests/ -v
-
-# Run with coverage report
-pytest tests/ --cov=analyzer --cov-report=html
+npm run dev
 ```
+
+The application will be available at `http://localhost:5173`
+
+**Features during development:**
+- ⚡ Fast refresh - Changes reflect instantly
+- 🔍 Type checking - TypeScript compilation
+- 📦 Optimized bundling - Only loads what you need
+- 🎯 Source maps - Easy debugging
+
+### Build
+
+Create an optimized production build:
+
+```bash
+npm run build
+```
+
+**Build outputs:**
+- Minified JavaScript and CSS
+- Tree-shaken dependencies
+- Optimized images and assets
+- Output in `dist/` directory
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+Preview the production build locally before deployment.
 
 ---
 
-## 🔬 How It Works
+## 💡 Usage Guide
 
-### Water Hardness Assessment Process
+### 1. **Water Hardness Analyzer**
+   - Navigate to the Analyzer page
+   - Input water sample hardness data (in mg/L or ppm)
+   - View detailed breakdown of:
+     - Total Hardness (TH)
+     - Temporary Hardness (TH - Permanent)
+     - Permanent Hardness
+     - Hardness classification
+   - Visual indicators show hardness level at a glance
 
-```
-Input Water Sample
-       ↓
-Parameter Detection (Ca²⁺, Mg²⁺, Conductivity, pH)
-       ↓
-Hardness Calculation (mg/L CaCO₃ equivalent)
-       ↓
-Classification & Analysis
-       ↓
-Treatment Recommendation
-       ↓
-Report Generation
-```
+### 2. **EDTA Titration Simulator**
+   - Access the EDTA page
+   - Follow step-by-step titration process
+   - Adjust parameters and observe color changes
+   - Learn the chemistry behind complexometric titration
+   - Understand the endpoint detection process
 
-### Scientific Methodology
+### 3. **Water Treatment Recommender**
+   - Enter your water hardness data
+   - Select your specific requirements (budget, space, efficiency)
+   - Receive tailored treatment recommendations
+   - Compare different treatment methods
+   - Get installation and maintenance guides
 
-The analyzer uses the **EDTA Complexometric Titration** method - the standard laboratory approach for accurate hardness determination:
+### 4. **Boiler Troubles Investigation**
+   - View common boiler problems caused by hard water
+   - Understand scale formation mechanisms
+   - Learn prevention strategies
+   - Identify maintenance requirements
+   - Access visual diagrams of issues
 
-1. Sample preparation to pH 9.0-10.0 using buffer solution
-2. Eriochrome Black-T indicator addition (wine-red color)
-3. EDTA titration until color changes to blue
-4. Hardness calculation: (Volume × Molarity × 100) / Sample Volume
-
-**Accuracy**: ±2-5% with proper laboratory conditions
+### 5. **Process Visualizations**
+   - Watch animated visualizations of:
+     - Ion exchange resin regeneration
+     - Membrane filtration in RO systems
+     - Lime-soda softening precipitation
+     - Chemical reactions in water treatment
+   - Pause and review each step
 
 ---
 
-## 📊 Performance Metrics
+## 🧪 Chemistry Behind
 
-| Method | Accuracy | Speed | Best For |
-|---|---|---|---|
-| EDTA Titration | ±2-5% | 15-30 min | Laboratory analysis |
-| Conductivity Analysis | ±8-12% | <1 min | Field measurements |
-| Spectrophotometry | ±1-2% | 5-10 min | High precision work |
+### Water Hardness Calculation
+
+**Total Hardness (TH)** is calculated as:
+```
+TH (mg/L as CaCO₃) = (Ca²⁺ in mg/L × 2.5) + (Mg²⁺ in mg/L × 4.12)
+```
+
+### EDTA Titration Method
+
+The application uses the complexometric titration method:
+
+1. **Indicator:** Eriochrome Black-T (EBT)
+2. **Buffer:** Ammonia-Ammonium Chloride (pH 10)
+3. **Titrant:** EDTA (Ethylenediaminetetraacetic acid)
+4. **Reaction:** M²⁺ + EDTA ⇌ M-EDTA complex
+
+**Hardness Determination:**
+```
+Hardness (ppm) = (Volume of EDTA × Normality × 50 × 1000) / Sample Volume
+```
+
+### Treatment Methods Included
+
+- **Ion Exchange Softening** - Removes Ca²⁺ and Mg²⁺ using resin
+- **Reverse Osmosis** - Physical membrane separation
+- **Lime-Soda Softening** - Chemical precipitation method
+- **Magnetic Water Conditioners** - (Educational reference)
+- **Boiling** - Removes temporary hardness
 
 ---
 
-## 🚨 Troubleshooting
+## 🏗️ Project Architecture
 
-### Sample pH out of acceptable range
-- Calibrate pH meter
-- Adjust sample pH to 6.5-8.5 using buffer solutions
+### Component Hierarchy
 
-### Invalid calcium/magnesium readings
-- Filter water sample (0.45µm) to remove suspended particles
-- Verify measurement equipment calibration
+```
+App
+├── AppLayout
+│   ├── AppHeader
+│   ├── AppSidebar
+│   └── Main Content Router
+│       ├── OverviewPage
+│       ├── AnalyzerPage
+│       │   └── HardnessAnalyzer
+│       ├── EDTAPage
+│       │   └── EDTASimulator
+│       ├── TreatmentsPage
+│       │   └── TreatmentRecommender
+│       ├── ProcessesPage
+│       │   └── ProcessVisualizations
+│       ├── BoilerTroublesPage
+│       │   └── BoilerTroublesExplainer
+│       └── NotFound
+```
 
-### Treatment recommendation not appearing
-- Ensure all required parameters are provided (Ca²⁺, Mg²⁺, pH, temperature)
-- Check input data validity
+### Data Flow
+
+```
+User Input
+   ↓
+Component State Management
+   ↓
+Water Calculation Library (waterCalculations.ts)
+   ↓
+Treatment/Data Lookup (treatmentData.ts)
+   ↓
+UI Components Rendering
+   ↓
+Visual Feedback & Results
+```
+
+### Key Modules
+
+| Module | Purpose | Key Functions |
+|--------|---------|---------------|
+| `waterCalculations.ts` | Core chemistry calculations | Hardness calculation, EDTA volume computation |
+| `treatmentData.ts` | Treatment database | Treatment methods, costs, specifications |
+| `boilerTroubles.ts` | Boiler issue data | Trouble identification, prevention tips |
+| `utils.ts` | Helper functions | Formatting, validation, conversion utilities |
 
 ---
 
 ## 🤝 Contributing
 
-We welcome contributions! Here's how to get started:
+Contributions are welcome! This project is open for improvements.
 
-1. **Fork the repository**
-   ```bash
-   git clone https://github.com/yourusername/Smart-Water-Hardness-and-Treatment-Analyzer.git
-   ```
+### How to Contribute
 
-2. **Create a feature branch**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
+1. **Fork** the repository
+2. **Create** a feature branch (`git checkout -b feature/AmazingFeature`)
+3. **Commit** your changes (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** to the branch (`git push origin feature/AmazingFeature`)
+5. **Open** a Pull Request
 
-3. **Make your changes**
-   - Follow PEP 8 coding standards
-   - Add tests for new features
-   - Update documentation
+### Areas for Enhancement
 
-4. **Commit and push**
-   ```bash
-   git commit -m "Add: description of changes"
-   git push origin feature/your-feature-name
-   ```
-
-5. **Submit a Pull Request**
-
-### Contribution Areas
-- 🔬 Additional analysis methods
-- 💾 Database integration
-- 🎨 Web UI development
-- 📊 Advanced visualization
-- 🌍 Internationalization
-- 🧪 Test coverage expansion
-
----
-
-## 📝 License
-
-This project is licensed under the **MIT License** - see the LICENSE file for details.
-
----
-
-## 👨‍💻 Author
-
-**Paul Bryton Raj**
-- GitHub: [@PaulBrytonRaj18](https://github.com/PaulBrytonRaj18)
-- Institute: Rajalakshmi Institute of Technology (RIT), Chennai
-
----
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/PaulBrytonRaj18/Smart-Water-Hardness-and-Treatment-Analyzer/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/PaulBrytonRaj18/Smart-Water-Hardness-and-Treatment-Analyzer/discussions)
-
----
-
-## 🎯 Roadmap
-
-### v1.1 (Coming Soon)
-- [ ] Web-based interface with Flask
-- [ ] Real-time IoT sensor integration
-- [ ] Cost-benefit analysis for treatments
-
-### v1.2
-- [ ] Machine learning trend predictions
-- [ ] Weather API integration
+- [ ] Add more water treatment methods
+- [ ] Dark Mode Support
+- [ ] Implement boiler corrosion prediction
+- [ ] Add water quality testing guides
 - [ ] Multi-language support
+- [ ] Export reports as PDF
+- [ ] Mobile app version
+- [ ] API integration for real water data
+- [ ] Machine learning for treatment recommendations
 
-### v2.0
-- [ ] Cloud deployment (AWS/GCP)
-- [ ] Mobile app support
-- [ ] Advanced monitoring dashboard
+### Code Standards
+
+- Use TypeScript for type safety
+- Follow existing code style and conventions
+- Add comments for complex logic
+- Test changes before submitting PR
+- Update documentation as needed
+
+---
+
+## 📊 Features Roadmap
+
+- ✅ Water hardness calculation
+- ✅ EDTA simulation
+- ✅ Treatment recommendations
+- ✅ Boiler troubleshooting
+- ⏳ PDF report generation
+- ⏳ Multi-language support (Hindi, Tamil, etc.)
+- ⏳ Mobile app (React Native)
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+**Free to use for:**
+- Educational purposes
+- Personal projects
+- Commercial applications
+- Modifications
+
+---
+
+## 📧 Contact
+
+**Author:** Paul Bryton Raj and Pon Vijayalakshmi 
+**Institute:** Rajalakshmi Institute of Technology, Chennai  
+**Year:** 1st Year, CSE  
+
+### Get in Touch
+
+ **Paul Bryton Raj**
+- 📧 Email: [paulbrytonraj18@gmail.com](mailto:paulbrytonraj18@gmail.com)
+- 🔗 GitHub: [@PaulBrytonRaj18](https://github.com/@PaulBrytonRaj18)
+- 💼 LinkedIn: [Paul Bryton Raj](https://linkedin.com/in/paul-bryton-raj)
+
+
 
 ---
 
 ## 🙏 Acknowledgments
 
-- APHA Standard Methods for water chemistry
-- Water quality guidelines from WHO and EPA
-- Scientific contributions from analytical chemistry research
-- Support from the open-source community
+- **Shadcn/UI** - For beautiful, accessible component library
+- **Vite** - For blazingly fast build tools
+- **React** - For declarative UI framework
+- **Tailwind CSS** - For utility-first styling
+- **Vercel** - For seamless deployment
+
+---
+
+## 🔐 Security & Privacy
+
+- **No Backend** - All calculations done locally on your device
+- **No Data Collection** - Your data is never stored or transmitted
+- **Open Source** - Code is transparent and auditable
+- **HTTPS Only** - Secure connection to the application
 
 ---
 
 <div align="center">
 
-### Made with ❤️ by Paul Bryton Raj
+**⭐ If you find this project helpful, please consider giving it a star! ⭐**
 
-⭐ If this project helped you, please consider starring it!
+---
 
-**[⬆ Back to Top](#-smart-water-hardness--treatment-analyzer)**
+Made with ❤️ by **Paul Bryton Raj** and **Pon Vijayalakshmi** 
 
 </div>
